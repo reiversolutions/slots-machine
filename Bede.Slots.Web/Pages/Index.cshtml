@@ -1,0 +1,64 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Simple Slot Machine";
+}
+
+<div class="text-center mt-2">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="display-4">Simple Slot Machine</h1>
+            <div id="balance-container" class="float-right text-success d-none">
+                Balance: £<span id="balance-text"></span>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <section id="alerts-container"></section>
+
+    <section id="welcome-container" class="mt-5">
+        <h3>Please deposit your starting funds to play</h3>
+        <div class="input-group mb-3 mt-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">£</span>
+            </div>
+            <input id="deposit-input" type="number" class="form-control" aria-label="Deposit">
+            <div class="input-group-append">
+                <button id="deposit-btn" class="btn btn-outline-primary" type="button">Deposit</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="stake-container" class="mt-5 d-none">
+        <h3>Stake your bet!</h3>
+
+        <div class="input-group mb-3 mt-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">£</span>
+            </div>
+            <input id="stake-input" type="number" class="form-control" aria-label="Stake">
+            <div class="input-group-append">
+                <button id="spin-btn" class="btn btn-outline-primary" type="button">Spin</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="slots-container" class="mt-5 d-none">
+        @for (var i = 0; i < 4; i++)
+        {
+            <div class="row mt-2 mb-2">
+                <div class="col-4">
+                    <div class="col-12 symbol"></div>
+                </div>
+                <div class="col-4">
+                    <div class="col-12 symbol"></div>
+                </div>
+                <div class="col-4">
+                    <div class="col-12 symbol"></div>
+                </div>
+            </div>
+        }
+    </section>
+</div>
